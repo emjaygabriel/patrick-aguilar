@@ -1,7 +1,7 @@
 <template>
     <section id="gallery-item">
         <div id="galleries">
-            <img src="../assets/3274387.webp" />
+            <img src="img/3274387.2749a43b.webp" />
         </div>
     </section>
   </template>
