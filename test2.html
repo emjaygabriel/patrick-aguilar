@@ -1,0 +1,113 @@
+<style>
+    .captioned_banners .captioned_banner_item { height: 416px; position: relative; overflow: hidden; background-size: cover; background-position: center; transition: 0.5s; width: 100%; border-radius: 15px; }
+
+    #capbanner1, #capbanner2 { transition: 0.5s; }
+
+
+    .captioned_banners .captioned_banner_item .caption, .captioned_banners .col-lg-4 .caption-small {
+        display: block;
+        text-align: center;
+        margin-top: 5rem;
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        width: 100%;
+    }
+    .captioned_banners .captioned_banner_item .caption .btn_join_now {
+        padding: 1rem 1.5rem;
+        background-color: #fff;
+        border-radius: 15px;
+        color: #000;
+    }
+
+    .captioned_banners .col-lg-4 .caption-small { margin-top: 8rem; }
+    .captioned_banners .col-lg-4 .caption-small, .captioned_banners .col-lg-8 .caption  {
+        display: block;
+    }
+    .captioned_banners .col-lg-4 .caption, .captioned_banners .col-lg-8 .caption-small {
+        display: none;
+    }
+
+    .captioned_banners h3 { color: #fff; font-size: 2.2rem; font-weight: bold; }
+    .captioned_banners p { color: #fff; margin-bottom: 2rem; font-size: 1.3rem; }
+
+    @media only screen and (max-width: 768px) {
+        .captioned_banners .captioned_banner_item { margin-bottom: 2rem; }
+        .captioned_banners .col-lg-4 .caption-small {
+            display: none !important;
+        }
+        .captioned_banners .col-lg-8 .caption  {
+            display: block !important;
+        }
+
+        #capbanner1 .caption {
+            display: block !important;
+        }
+    }
+</style>
+<div class="container captioned_banners">
+    <div class="row">
+        <div id="capbanner1" class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div class="captioned_banner_item" style="background-image: url(https://placehold.co/832x416)">
+                <div class="caption">
+                    <h3>Test 1</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <div><a href="#" class="btn_join_now">Join Now</a></div>
+                </div>
+                <div class="caption-small">
+                    <h3>Test 1</h3>
+                </div>
+            </div>
+        </div>
+        <div id="capbanner2" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <div class="captioned_banner_item" style="background-image: url(https://placehold.co/832x416)">
+                <div class="caption">
+                    <h3>Test 1</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <div><a href="#" class="btn_join_now">Join Now</a></div>
+                </div>
+                <div class="caption-small">
+                    <h3>Test 1</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let banner1 = document.getElementById("capbanner1");
+    let banner2 = document.getElementById("capbanner2");
+
+    const initialScreenWidth = window.innerWidth;
+
+    function banner1_expand() {
+        const screenWidth = window.innerWidth;
+        if(screenWidth > 768) {
+            banner1.classList.remove("col-lg-4", "col-xl-4");
+            banner1.classList.add("col-lg-8", "col-xl-8");
+            banner2.classList.remove("col-lg-8", "col-xl-8");
+            banner2.classList.add("col-lg-4", "col-xl-4");
+        }
+    }
+
+    function banner1_condensed() {
+        const screenWidth = window.innerWidth;
+        if(screenWidth > 768) {
+            banner1.classList.remove("col-lg-8", "col-xl-8");
+            banner1.classList.add("col-lg-4", "col-xl-4");
+            banner2.classList.remove("col-lg-4", "col-xl-4");
+            banner2.classList.add("col-lg-8", "col-xl-8");
+        }
+    }
+
+    banner1.addEventListener('mouseover', banner1_expand);
+    banner1.addEventListener('mouseout', banner1_condensed);
+
+    // banner2.addEventListener('mouseout', banner1_expand);
+    // banner2.addEventListener('mouseover', banner1_condensed);
+    
+    // element.classList.add("class1", "class2", "class3");
+
+    // Remove multiple classes
+    //element.classList.remove("class1", "class2");
+</script>
